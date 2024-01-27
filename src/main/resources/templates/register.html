@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Register page</title>
+	    <style>
+
+.notification {
+  color: #ff6347;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+        .register-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+    </style>
+</head>
+<body>
+	 <div class="register-container" >
+        <h2>Create an Account</h2>
+        <p class="notification">* You will have to add a minimum of 500 Rs to create an account.</p>
+        <form id="register-form" th:action="@{/createAccount}" method="post">
+          <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-group">
+            <label for="mobile">Mobile No:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+          </div>
+          <div class="input-group">
+            <label for="username">Create Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="input-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="button-group">
+            <button type="submit">Register</button>
+            <a  th:href=@{/} ><button type="button" >Cancel</button></a>
+          </div>
+        </form>
+      </div>
+</html>

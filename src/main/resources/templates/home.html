@@ -1,0 +1,93 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Home page</title>
+	
+	<style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.dashboard-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 12px 30%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logout {
+  margin-top: 30px;
+}
+
+.logout a {
+  color: #555;
+  text-decoration: none;
+}
+
+.logout a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+#logout{
+	background-color: red;
+	}
+#logout:hover{
+	background-color: maroon;
+}
+    </style>
+	
+	
+</head>
+<body>
+	
+	<div class="dashboard-container">
+        <p>Welcome  </p> <p th:text = "${name}"></p> 
+       
+        <div class="options">
+          <a th:href=@{/fetchBalance}><button >Show Balance</button></a>
+          <a th:href=@{/toAddMoneyPage}><button >Add Money</button></a>
+          <a th:href=@{/toWithdrawMoneyPage}><button >Withdraw Money</button></a>
+          <a th:href=@{/toTransferMoneyPage}><button >Transfer Money</button></a>
+          <a th:href=@{/toTransactionPage}><button >Transaction History</button></a>
+          <a th:href=@{/}><button id="logout">Logout</button></a>
+        </div>
+      </div>
+	
+</body>
+</html>

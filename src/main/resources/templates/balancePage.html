@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Balance Page</title>
+	
+	<style>
+        /* Your existing CSS styles can be used here */
+
+.balance-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+span {
+  font-weight: bold;
+  color: #007bff;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+	
+</head>
+<body>
+	
+	<div class="balance-container">
+        <h2>Available Balance</h2>
+        <p>Your current balance is: <span id="balanceAmount" th:text="${balance}"></span><span> Rs</span></p>
+        <button onclick="goBack()">Go Back</button>
+        
+      </div>
+      
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+	
+</body>
+</html>

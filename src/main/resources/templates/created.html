@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title> Created</title>
+</head>
+	<style>
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+.login-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: #0056b3;
+}
+	</style>
+
+<body>
+<div class="container">
+    <h1>Account Created Successfully</h1>
+    <p>Your balance: Rs 500</p>
+    <a th:href=@{/} class="login-link">Go to Login Page</a>
+  </div>
+	
+	
+</body>
+</html>

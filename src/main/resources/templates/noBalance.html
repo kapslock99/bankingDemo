@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Transaction success</title>
+	
+	<style>
+        /* Your existing CSS styles can be used here */
+
+.success-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#red{
+	color: red;
+}
+
+    </style>
+	
+	
+</head>
+<body>
+	
+	<div class="success-container">
+    <h2>Transaction Failed</h2>
+    <p id="red">Insufficient Balance</p>
+    <p>Please try with some less amount</p>
+    <a th:href=@{/toWithdrawMoneyPage}><button>TRY AGAIN</button></a>
+  </div>
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Transactions page</title>
+	
+	<style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.transactions-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.transactions-table th, .transactions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.transactions-table th {
+  background-color: #f2f2f2;
+}
+
+.go-back-link {
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+.go-back-link:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+	
+</head>
+<body>
+	
+	<h1>Transactions</h1>
+
+<table class="transactions-table">
+    <thead>
+        <tr>
+            <th>Transaction Amount</th>
+            <th>Transaction Type</th>
+            <th>Transaction Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="transaction : ${transactions}">
+            <td th:text="${transaction.transactionAmount}">Amount</td>
+            <td th:text="${transaction.transactionType}">Type</td>
+            <td th:text="${transaction.transactionTime}">Date and Time</td>
+        </tr>
+    </tbody>
+  
+</table>
+
+<br>
+
+<a href="javascript:history.back()" class="go-back-link">Go Back</a>
+	
+	
+</body>
+</html>
